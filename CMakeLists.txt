@@ -1,15 +1,15 @@
 cmake_minimum_required(VERSION 3.1.2)
 
-project(matroska VERSION 1.6.3)
+project(matroska VERSION 1.7.1)
 
 option(DISABLE_PKGCONFIG "Disable PkgConfig module generation" OFF)
 option(DISABLE_CMAKE_CONFIG "Disable CMake package config module generation" OFF)
 
-find_package(EBML 1.4.2 REQUIRED)
+find_package(EBML 1.4.3 REQUIRED)
 
 include(GNUInstallDirs)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(libmatroska_SOURCES
@@ -104,8 +104,16 @@ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/matroska_export.h DESTINATION ${CMAKE_
 if(NOT DISABLE_PKGCONFIG)
   set(prefix ${CMAKE_INSTALL_PREFIX})
   set(exec_prefix "\$\{prefix\}")
-  set(libdir "\$\{prefix\}/${CMAKE_INSTALL_LIBDIR}")
-  set(includedir "\$\{prefix\}/${CMAKE_INSTALL_INCLUDEDIR}")
+  if (IS_ABSOLUTE ${CMAKE_INSTALL_LIBDIR})
+    set(libdir "${CMAKE_INSTALL_LIBDIR}")
+  else()
+    set(libdir "\$\{prefix\}/${CMAKE_INSTALL_LIBDIR}")
+  endif()
+  if (IS_ABSOLUTE ${CMAKE_INSTALL_INCLUDEDIR})
+    set(includedir "${CMAKE_INSTALL_INCLUDEDIR}")
+  else()
+    set(includedir "\$\{prefix\}/${CMAKE_INSTALL_INCLUDEDIR}")
+  endif()
   set(PACKAGE_VERSION ${PROJECT_VERSION})
   configure_file(libmatroska.pc.in libmatroska.pc @ONLY)
   install(FILES ${CMAKE_CURRENT_BINARY_DIR}/libmatroska.pc DESTINATION ${CMAKE_INSTALL_LIBDIR}/pkgconfig)

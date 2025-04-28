@@ -1,3 +1,18 @@
+libmatroska (1.7.1-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Debian Janitor ]
+  * Remove constraints unnecessary since buster
+
+  [ Sebastian Ramacher ]
+  * New upstream version 1.7.1
+  * debian/control:
+    - Bump libebml-dev (Build-)Depends
+    - Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 09 Oct 2022 17:33:54 +0200
+
 libmatroska (1.6.3-2) unstable; urgency=medium
 
   * Upload to unstable

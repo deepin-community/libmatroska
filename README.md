@@ -1,11 +1,17 @@
+[![Linux](https://github.com/Matroska-Org/libmatroska/actions/workflows/linux.yaml/badge.svg)](https://github.com/Matroska-Org/libmatroska/actions/workflows/linux.yaml)
+[![Windows](https://github.com/Matroska-Org/libmatroska/actions/workflows/windows.yaml/badge.svg)](https://github.com/Matroska-Org/libmatroska/actions/workflows/windows.yaml)
+[![macOS](https://github.com/Matroska-Org/libmatroska/actions/workflows/macos.yaml/badge.svg)](https://github.com/Matroska-Org/libmatroska/actions/workflows/macos.yaml)
+[![GCC10](https://github.com/Matroska-Org/libmatroska/actions/workflows/linux-gcc10.yaml/badge.svg)](https://github.com/Matroska-Org/libmatroska/actions/workflows/linux-gcc10.yaml)
+
 # libmatroska
-a C++ libary to parse and create Matroska files
+a C++ library to parse and create Matroska files
 
 # Building and installing
 
 ## Building and installing the library
 
-libmatroska is based on `cmake`. It requires a C++ compiler as well as
+libmatroska is based on `cmake`. It requires a C++ compiler compatible
+with the C++14 standard as well as
 [libebml](https://github.com/Matroska-Org/libebml). This means that
 the normal build process consists of the usual steps:
 
