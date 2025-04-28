@@ -9,11 +9,10 @@ Uploaders:
 Build-Depends:
  debhelper-compat (= 13),
  cmake,
- g++ (>= 4:5.2),
- libebml-dev (>= 1.4.0),
+ libebml-dev (>= 1.4.3),
  pkg-config
 Rules-Requires-Root: no
-Standards-Version: 4.5.1
+Standards-Version: 4.6.1
 Vcs-Git: https://salsa.debian.org/multimedia-team/libmatroska.git
 Vcs-Browser: https://salsa.debian.org/multimedia-team/libmatroska
 Homepage: https://www.matroska.org/
@@ -46,7 +45,7 @@ Architecture: any
 Multi-Arch: same
 Depends:
  libmatroska7 (= ${binary:Version}),
- libebml-dev (>= 1.4.0),
+ libebml-dev (>= 1.4.3),
  ${misc:Depends}
 Description: extensible open standard audio/video container format (development files)
  Matroska is aiming to become the standard of Multimedia
